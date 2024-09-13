@@ -11,6 +11,6 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx:stable
+    image: nginx:1.9.9
     ports:
     - containerPort: 80
