@@ -10,7 +10,7 @@ metadata:
   namespace: b-team
 spec:
   containers:
-  - name: nginx
-    image: nginx:1.9.9
-    ports:
-    - containerPort: 80
+    - name: nginx
+      image: nginx:stable
+      ports:
+        - containerPort: 80
