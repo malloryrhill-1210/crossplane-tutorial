@@ -20,3 +20,26 @@ spec:
       selfHeal: true
       prune: true
       allowEmpty: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: b-team
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/malloryrhill-1210/crossplane-tutorial.git"
+    targetRevision: HEAD
+    path: b-team
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: b-team
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
